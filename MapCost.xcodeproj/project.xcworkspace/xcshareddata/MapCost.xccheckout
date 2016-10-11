@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BF904012-65D0-4C5F-B502-361474CDA0B7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MapCost</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D11DED0443169A8A14555B8C2518693B5BE01C23</key>
+		<string>https://git.coding.net/ldehai/mapcost.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MapCost.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D11DED0443169A8A14555B8C2518693B5BE01C23</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://git.coding.net/ldehai/mapcost.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D11DED0443169A8A14555B8C2518693B5BE01C23</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D11DED0443169A8A14555B8C2518693B5BE01C23</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mapcost</string>
+		</dict>
+	</array>
+</dict>
+</plist>

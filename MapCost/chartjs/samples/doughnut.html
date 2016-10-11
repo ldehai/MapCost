@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Doughnut Chart</title>
+		<script src="../Chart.js"></script>
+		<meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
+		<style>
+			canvas{
+			}
+		</style>
+	</head>
+	<body bgcolor="#f4f4f4">
+		<canvas id="canvas" height="myheight" width="mywidth"></canvas>
+
+
+	<script>
+
+		var doughnutData = [mydata];
+
+	var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
+
+	</script>
+	</body>
+</html>
