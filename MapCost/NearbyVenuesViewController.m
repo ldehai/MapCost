@@ -48,8 +48,8 @@ enum CURRENT_PAGE {
     [super viewDidLoad];
     
     curPage = CURRENT_PAGE_HOME;
-    [self setTitle:@"Map Cost"];
-    [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:248.0/255.0 green:248.0/255.0 blue:248.0/255.0 alpha:1.0]];
+    [self setTitle:@"MapCost"];
+//    [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:248.0/255.0 green:248.0/255.0 blue:248.0/255.0 alpha:1.0]];
     
    [self addNavigationButton];
     
@@ -98,19 +98,19 @@ enum CURRENT_PAGE {
 -(void)addNavigationButton{
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setShowsTouchWhenHighlighted:TRUE];
-    [btn setImage:[UIImage imageNamed:@"setting@2x.png"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
     //[btn addTarget:self.viewDeckController action:@selector(toggleLeftView) forControlEvents:UIControlEventTouchUpInside];
-    [btn setFrame:CGRectMake(0, 0, 25, 25)];
+    [btn setFrame:CGRectMake(0, 0, 20, 14)];
     
     UIBarButtonItem *barbtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.leftBarButtonItem = barbtn;
     
     btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setShowsTouchWhenHighlighted:TRUE];
-    [btn setImage:[UIImage imageNamed:@"switch@2x.png"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"stat"] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(flipAction:) forControlEvents:UIControlEventTouchUpInside];
-    [btn setFrame:CGRectMake(0, 0, 25, 25)];
+    [btn setFrame:CGRectMake(0, 0, 20, 20)];
     barbtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.rightBarButtonItem = barbtn;
 
@@ -442,7 +442,7 @@ enum CURRENT_PAGE {
 
      //   [[NSNotificationCenter defaultCenter] postNotificationName:kReloadDataNotification object:self userInfo:nil];
 
-        [self setTitle:@"Cost Stat"];
+        [self setTitle:@"Summary"];
         curPage = CURRENT_PAGE_COST;
 	}
 	else
@@ -450,7 +450,7 @@ enum CURRENT_PAGE {
 		[statView.view removeFromSuperview];
 		[self.view addSubview:self.tableView];
 
-        [self setTitle:@"Map Cost"];
+        [self setTitle:@"MapCost"];
         curPage = CURRENT_PAGE_HOME;
 	}
 	
@@ -549,6 +549,13 @@ enum CURRENT_PAGE {
     if (newState == MKAnnotationViewDragStateEnding) {
         
     }
+}
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    CLLocationCoordinate2D location = mapView.centerCoordinate;
+    CLLocation *newLocation = [[CLLocation alloc] initWithLatitude:location.latitude longitude:location.longitude];
+    [self setupMapForLocatoion:newLocation];
+    [self getVenuesForLocation:newLocation];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
@@ -800,7 +807,10 @@ enum CURRENT_PAGE {
 
 - (IBAction)giveFeedback:(id)sender {
     [self openSetting:nil];
-    [self mailto];
+//    [self mailto];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=689270210"]];
+
 }
 
 - (IBAction)billStat:(id)sender {
@@ -818,10 +828,17 @@ enum CURRENT_PAGE {
 }
 
 - (IBAction)loadFavoriteVenue:(id)sender {
-    [self openSetting:nil];
     
-    [self.nearbyVenues removeAllObjects];
-    [self proccessAnnotations];
+    [self openSetting:nil];
+    BOOL  bPurchase = [[AppHelper sharedInstance] readPurchaseInfo];
+    if (!bPurchase) {
+        [self upgradePro:nil];
+    }
+    else
+    {
+        [self.nearbyVenues removeAllObjects];
+        [self proccessAnnotations];
+    }
     
 }
 

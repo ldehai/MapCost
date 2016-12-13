@@ -12,6 +12,7 @@
 #import "NearbyVenuesViewController.h"
 #import "Foursquare2.h"
 #import "SettingViewController.h"
+#import "iRate.h"
 //#import "BakerAnalyticsEvents.h"
 
 @interface AppDelegate()<CLLocationManagerDelegate>
@@ -23,6 +24,22 @@
 @end
 @implementation AppDelegate
 @synthesize viewController;
+
++ (void)initialize
+{
+    //set the bundle ID. normally you wouldn't need to do this
+    //as it is picked up automatically from your Info.plist file
+    //but we want to test with an app that's actually on the store
+    [iRate sharedInstance].applicationBundleID = @"com.amstudio.mapcost";
+    [iRate sharedInstance].onlyPromptIfLatestVersion = NO;
+    
+    //enable preview mode
+//    [iRate sharedInstance].previewMode = YES;
+    
+    [iRate sharedInstance].daysUntilPrompt = 5;
+    [iRate sharedInstance].usesUntilPrompt = 15;
+    [iRate sharedInstance].appStoreID = 689270210;
+}
 
 - (void)initializeiCloudAccess {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -37,6 +54,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
    // [self initializeiCloudAccess];
+    
     [Foursquare2 setupFoursquareWithKey:@"SBJW3CUDLI2BV32IZBYI0TIRTJ5XDB550TCX3IXKT4JMMSI5"
                                  secret:@"W5GBRV4KKN5CRCUYBTDPWM1VXGWKC4OHCDU2Q0HVDJ5D1UNQ"
                             callbackURL:@"mapcost"];

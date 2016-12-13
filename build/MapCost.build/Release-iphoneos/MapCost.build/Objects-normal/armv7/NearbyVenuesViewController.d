@@ -1,0 +1,24 @@
+dependencies: \
+  /Users/andy/labs/MapCost/MapCost/NearbyVenuesViewController.m \
+  /Users/andy/labs/MapCost/MapCost/AppDelegate.h \
+  /Users/andy/labs/MapCost/MapCost/NearbyVenuesViewController.h \
+  /Users/andy/labs/MapCost/MapCost/Foursquare2/Foursquare2.h \
+  /Users/andy/labs/MapCost/MapCost/Foursquare2/FSRequester.h \
+  /Users/andy/labs/MapCost/MapCost/Foursquare2/FSWebLogin.h \
+  /Users/andy/labs/MapCost/MapCost/Foursquare2/FSVenue.h \
+  /Users/andy/labs/MapCost/MapCost/Foursquare2/FSConverter.h \
+  /Users/andy/labs/MapCost/MapCost/EGODatabase/EGODatabase.h \
+  /Users/andy/labs/MapCost/MapCost/EGODatabase/EGODatabaseRequest.h \
+  /Users/andy/labs/MapCost/MapCost/EGODatabase/EGODatabaseResult.h \
+  /Users/andy/labs/MapCost/MapCost/EGODatabase/EGODatabaseRow.h \
+  /Users/andy/labs/MapCost/MapCost/BiLLInfo.h \
+  /Users/andy/labs/MapCost/MapCost/CostStatViewController.h \
+  /Users/andy/labs/MapCost/MapCost/ThisVenuesViewController.h \
+  /Users/andy/labs/MapCost/MapCost/UIDeviceAddition/UIDevice+IdentifierAddition.h \
+  /Users/andy/labs/MapCost/MapCost/MyVenue.h \
+  /Users/andy/labs/MapCost/MapCost/SettingViewController.h \
+  /Users/andy/labs/MapCost/MapCost/UpgradeViewController.h \
+  /Users/andy/labs/MapCost/MapCost/InAppPurchaseManager.h \
+  /Users/andy/labs/MapCost/MapCost/AppHelper.h \
+  /Users/andy/labs/MapCost/ThirdPart/SVProgressHUD/SVProgressHUD.h \
+  /Users/andy/labs/MapCost/MapCost/Base64/Base64.h

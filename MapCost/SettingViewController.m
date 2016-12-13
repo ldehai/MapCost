@@ -44,16 +44,14 @@
     [self addNavigationButton];
     
     NSString *strBundleVersion = [NSString stringWithFormat:@"%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
-    self.verlabel.text = [NSString stringWithFormat:@"MapCost v %@",strBundleVersion];
+    self.verlabel.text = [NSString stringWithFormat:@"Mapcost v%@",strBundleVersion];
     
     self.appArray = [NSArray arrayWithObjects:
                      [NSArray arrayWithObjects:@"ShoeBox",@"shoebox.png",@"Find your shoes quickly",
                       @"https://itunes.apple.com/us/app/shoebox-find-your-shoes-quickly/id640885172?ls=1&mt=8",nil],
                      
                      [NSArray arrayWithObjects:@"TripCost",@"tripcost.png",@"Split bills with friends",
-                      @"https://itunes.apple.com/us/app/tripcost-split-bills-friends/id633501469?ls=1&mt=8",nil],
-                     [NSArray arrayWithObjects:@"E.Timer",@"etimer.png",@"Excellent CountDown Timer",
-                      @"https://itunes.apple.com/us/app/e.timer/id660765636?ls=1&mt=8",nil],nil];
+                      @"https://itunes.apple.com/us/app/tripcost-split-bills-friends/id633501469?ls=1&mt=8",nil],nil];
 }
 
 - (void)setTitle:(NSString *)title

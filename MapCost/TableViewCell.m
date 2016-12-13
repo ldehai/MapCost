@@ -71,6 +71,8 @@
 
 -(void)layoutSubviews {
     [super layoutSubviews];
+    
+    self.imageView.frame = CGRectMake(15,5,40,40);
 }
 
 -(void)setThumbnail:(UIImage*)image {
@@ -87,13 +89,13 @@
 
             //if (self.contentView.frame.origin.x < 2*CGRectGetWidth(self.actionImageView.frame)) {
         if (translation.x <= 1.5*self.contentView.frame.size.height) {
-            [self.actionImageView setImage:[UIImage imageNamed:@"trash"]];
+            [self.actionImageView setImage:[UIImage imageNamed:@"delete_white"]];
                 self.backView.backgroundColor = [UIColor colorWithWhite:0.92 alpha:1];
                 [self.actionImageView setAlpha:(self.contentView.frame.origin.x/self.actionImageView.frame.size.width)];
                 
             }else// if (self.contentView.frame.origin.x > 2*CGRectGetWidth(self.actionImageView.frame))
             {
-                [self.actionImageView setImage:[UIImage imageNamed:@"trash"]];
+                [self.actionImageView setImage:[UIImage imageNamed:@"delete_white"]];
                 self.backView.backgroundColor = [UIColor colorWithRed:239.0/255 green:84.0/255.0 blue:12.0/255 alpha:1.0];//[UIColor greenColor];
                 
             }
@@ -101,13 +103,13 @@
     else if (translation.x < 0) {
         [self.deleteImageView setFrame:CGRectMake(MIN(CGRectGetMaxX(self.frame) - CGRectGetWidth(self.deleteImageView.frame), CGRectGetMaxX(self.contentView.frame)), CGRectGetMinY(self.deleteImageView.frame), CGRectGetWidth(self.deleteImageView.frame), CGRectGetHeight(self.deleteImageView.frame))];
         if (fabs(translation.x) <= 1.5*self.contentView.frame.size.height) {
-            [self.deleteImageView setImage:[UIImage imageNamed:@"trash"]];
+            [self.deleteImageView setImage:[UIImage imageNamed:@"delete_white"]];
             self.backView.backgroundColor = [UIColor colorWithWhite:0.92 alpha:1];
             [self.actionImageView setAlpha:(self.contentView.frame.origin.x/self.actionImageView.frame.size.width)];
         }
         else
         {
-            [self.deleteImageView setImage:[UIImage imageNamed:@"trash"]];
+            [self.deleteImageView setImage:[UIImage imageNamed:@"delete_white"]];
             self.backView.backgroundColor = [UIColor colorWithRed:239.0/255 green:84.0/255.0 blue:12.0/255 alpha:1.0];
         }
     }

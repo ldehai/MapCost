@@ -46,7 +46,7 @@
     
     [self addNavigationButton];
     
-    self.tableView.separatorColor = [UIColor clearColor];
+//    self.tableView.separatorColor = [UIColor clearColor];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
@@ -59,8 +59,8 @@
     
     self.colors = [NSMutableArray arrayWithObjects:@"#E0E4CC",@"#69D2E7",@"#46BFBD",@"#FDB45C",@"#949FB1",@"#4D5360",@"#D97041",@"#C7604C",@"#9D9B7F",@"#7D4F6D",@"#584A5E",@"#F7464A",@"#F38630",@"#21323D",nil];
     
-    self.totalCostLabel.backgroundColor = [UIColor colorWithHexString:[self.colors objectAtIndex:0]]; //
-    self.tableView.tableFooterView = self.totalCostLabel;
+//    self.totalCostLabel.backgroundColor = [UIColor colorWithHexString:[self.colors objectAtIndex:0]]; //
+    self.tableView.tableFooterView = self.tableFooter;
     
 //    self.tableView.tableFooterView = self.footer;
     _locationManager = [[CLLocationManager alloc]init];
@@ -504,7 +504,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 65;
+    return 55;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -522,17 +522,22 @@
     cell.dateTextLabel.text = [NSString stringWithFormat:@"%.2f",bill.bill];
     cell.textLabel.text = bill.comment;
     cell.detailTextLabel.text = bill.date;
+    cell.textLabel.textColor = [UIColor blackColor];
+    cell.detailTextLabel.textColor = [UIColor blackColor];
+    cell.dateTextLabel.textColor = [UIColor blackColor];
     
+    cell.imageView.clipsToBounds = YES;
+    cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
     cell.imageView.image = [UIImage imageWithContentsOfFile:bill.imagepath];
     cell.delegate = self;
     cell.revealDirection = RMSwipeTableViewCellRevealDirectionBoth;
 
-    if(indexPath.row < billArray.count)
-    {
-        UIImageView *line = [[UIImageView alloc] initWithFrame:CGRectMake(5, 65, 320-10, 1)];
-        line.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.3];
-        [cell addSubview:line];
-    }
+//    if(indexPath.row < billArray.count)
+//    {
+//        UIImageView *line = [[UIImageView alloc] initWithFrame:CGRectMake(5, 65, 320-10, 1)];
+//        line.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.3];
+//        [cell addSubview:line];
+//    }
     
     return cell;
 }

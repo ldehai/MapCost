@@ -21,6 +21,7 @@
 @property (strong, nonatomic) IBOutlet UIView *footer;
 @property (strong, nonatomic) IBOutlet UILabel *totalCostLabel;
 @property (nonatomic,retain)  NSMutableArray *colors;
+@property (strong, nonatomic) IBOutlet UIView *tableFooter;
 
 - (id)initWithVenues:(FSVenue*)venue;
 - (IBAction)billStat:(id)sender;
