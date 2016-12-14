@@ -36,15 +36,17 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.4.3</string>
+	<string>1.4.5</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>capture cost image for you</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string>use location service to show your fresh data</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>use location service to show your fresh data</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Save cost image for you</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
 	<key>UIPrerenderedIcon</key>
@@ -68,9 +70,9 @@
 				<key>Blue</key>
 				<real>1</real>
 				<key>Green</key>
-				<real>0.0</real>
+				<real>0</real>
 				<key>Red</key>
-				<real>0.0</real>
+				<real>0</real>
 			</dict>
 			<key>Translucent</key>
 			<false/>
