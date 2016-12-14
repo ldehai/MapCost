@@ -1059,6 +1059,9 @@ enum CURRENT_PAGE {
     if ([venue isKindOfClass:[MyVenue class]]) {
         cell.textLabel.textColor = [UIColor colorWithHexString:@"00AB72"];
     }
+    else{
+        cell.textLabel.textColor = [UIColor blackColor];
+    }
 
     return cell;
 }
