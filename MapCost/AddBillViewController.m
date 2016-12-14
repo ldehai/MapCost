@@ -9,7 +9,6 @@
 #import "AddBillViewController.h"
 #import "BiLLInfo.h"
 #import "UIImage+fixOrientation.h"
-#import "ALAssetsLibrary+CustomPhotoAlbum.h"
 
 @interface AddBillViewController ()<UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
@@ -153,6 +152,7 @@ typedef enum CalStatus{
     if (comment.text == nil) {
         comment.text = @"";
     }
+    NSLog(@"%@",self.comment.text);
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -170,16 +170,16 @@ typedef enum CalStatus{
         NSString *imageName  = [NSString stringWithFormat:@"%@.png",imageid];
         NSString *pngPath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@", imageName]];
         UIImage *image = self.img.image;
-        CGSize size = [[UIScreen mainScreen] bounds].size;
-        
-        CGSize scaledsize = CGSizeMake(size.width/2,size.height/2);
-        if (image.size.width > image.size.height) {
-            scaledsize = CGSizeMake(size.height/2,size.width/2);
-        }
-        image = [image scaleToSize:scaledsize];
-        
-        [UIImagePNGRepresentation(image) writeToFile:pngPath atomically:YES];
-        
+//        CGSize size = [[UIScreen mainScreen] bounds].size;
+//        
+//        CGSize scaledsize = CGSizeMake(size.width/2,size.height/2);
+//        if (image.size.width > image.size.height) {
+//            scaledsize = CGSizeMake(size.height/2,size.width/2);
+//        }
+//        image = [image scaleToSize:scaledsize];
+//        
+//        [UIImagePNGRepresentation(image) writeToFile:pngPath atomically:YES];
+//        
         NSData *imageData;
         imageData=UIImageJPEGRepresentation(image, 0.5);
         if ([imageData writeToFile:pngPath atomically:YES]) {
@@ -187,38 +187,13 @@ typedef enum CalStatus{
         }
         
         self.bill.imagepath = pngPath;
-        
-        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-        [library saveImageData:imageData toAlbum:@"MapCost" metadata:nil completion:^(NSURL *assetURL, NSError *error) {
-            NSLog(@"%s: Save image with asset url %@ (absolute path: %@), type: %@", __PRETTY_FUNCTION__,
-                  assetURL, [assetURL absoluteString], [assetURL class]);
-            
-            //照片名
-            NSString *imageName  = [NSString stringWithFormat:@"%@.png",imageid];
-            NSString *pngPath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@", imageName]];
-            
-            self.bill.imagepath = pngPath;
-            
-            NSLog(@"%@",self.comment.text);
-            
-            [self.delegate savebill:self.bill];
-            
-        } failure:^(NSError *error) {
-            //
-        }];
     }
-
-    
-    NSLog(@"%@",self.comment.text);
     
     [self.delegate savebill:self.bill];
-    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-    
-
 }
 
 - (void)didReceiveMemoryWarning

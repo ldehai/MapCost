@@ -23,6 +23,7 @@
 #import "SVProgressHUD.h"
 #import "Base64.h"
 #import "SettingViewController.h"
+#import "UIColor+Categories.h"
 
 enum CURRENT_PAGE {
     CURRENT_PAGE_HOME = 1,
@@ -38,6 +39,7 @@ enum CURRENT_PAGE {
     UIView *popMenu;
     int curPage;
     int myTotleVenue;
+    MyVenue *myann;
 }
 @end
 
@@ -145,7 +147,7 @@ enum CURRENT_PAGE {
         
         CLLocationCoordinate2D touchMapCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
         
-        MyVenue *ann = [[MyVenue alloc] init];
+        myann = [[MyVenue alloc] init];
         NSString *venueid = [self generateID];
         NSString *venuename = @"New Venue";
         NSString *address = @"Self-Defined Address";
@@ -154,14 +156,14 @@ enum CURRENT_PAGE {
 //        CLLocation *centerPoint =  [[CLLocation alloc]initWithLatitude:self.mapView.centerCoordinate.latitude longitude:self.mapView.centerCoordinate.longitude];
 //        CLLocationDistance dist = [curPoint distanceFromLocation:centerPoint];
         
-        ann.name = venuename;
-        ann.venueId = venueid;
-        ann.location.address = address;
+        myann.name = venuename;
+        myann.venueId = venueid;
+        myann.location.address = address;
 //        ann.location.distance = 0;
-        ann.location.coordinate = touchMapCoordinate;
-        ann.delegate = self;
+        myann.location.coordinate = touchMapCoordinate;
+        myann.delegate = self;
         
-        [self.mapView addAnnotation:ann];
+        [self.mapView addAnnotation:myann];
     }
     else if (gestureRecognizer.state == UIGestureRecognizerStateEnded)
     {
@@ -224,21 +226,21 @@ enum CURRENT_PAGE {
 - (IBAction)saveVenue:(id)sender {
     if (![self.venueName.text isEqualToString:@""]) {
         
-        MyVenue *ann = self.mapView.selectedAnnotations.lastObject;
-        ann.name = self.venueName.text;
-        ann.location.address = self.venueAddress.text;
+//        MyVenue *ann = self.mapView.selectedAnnotations.lastObject;
+        myann.name = self.venueName.text;
+        myann.location.address = self.venueAddress.text;
         
         //重新加入是为了更新提示框的文字
-        [self.mapView removeAnnotation:ann];
-        [self.mapView addAnnotation:ann];
+        [self.mapView removeAnnotation:myann];
+        [self.mapView addAnnotation:myann];
         
         if (!self.nearbyVenues) {
             self.nearbyVenues = [[NSMutableArray alloc]init];
         }
-        [self.nearbyVenues insertObject:ann atIndex:0];
+        [self.nearbyVenues insertObject:myann atIndex:0];
         
         //加入数据库
-        [self saveVenue2Database:ann];
+        [self saveVenue2Database:myann];
         
         //插入列表
         NSIndexPath * indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -257,12 +259,15 @@ enum CURRENT_PAGE {
         self.venueName.text = self.venueAddress.text = @"";
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"AppAddVenueSuccess" object:self.venueName.text]; // -> Analytics Event
+        
+        myann = nil;
     }
 }
 
 - (IBAction)cancelVenue:(id)sender {
-    MyVenue *ann = self.mapView.selectedAnnotations.lastObject;
-    [self.mapView removeAnnotation:ann];
+//    MyVenue *ann = self.mapView.selectedAnnotations.lastObject;
+    [self.mapView removeAnnotation:myann];
+    myann = nil;
     
     [dimBackgroundView removeFromSuperview];
     [self.editVenue removeFromSuperview];
@@ -569,27 +574,57 @@ enum CURRENT_PAGE {
     //self-define location
     else if ([annotation isKindOfClass:[MyVenue class]])
     {
-        static NSString *s = @"myann";
+/*        static NSString *s = @"myann";
         MKAnnotationView *pin = [mapView dequeueReusableAnnotationViewWithIdentifier:s];
-        if (!pin) {
+        if (pin == nil) {
             pin = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:s];
-            pin.canShowCallout = YES;
-            //pin.image = [UIImage imageNamed:@"map"];
-            pin.calloutOffset = CGPointMake(0, 0);
-            UIButton *buttonRight = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            [buttonRight addTarget:self action:@selector(openVenue) forControlEvents:UIControlEventTouchUpInside];
-            pin.rightCalloutAccessoryView = buttonRight;
-            
-            UIButton *buttonLeft = [UIButton buttonWithType:UIButtonTypeCustom];
-            [buttonLeft setFrame:CGRectMake(0, 0, 16, 20)];
-            [buttonLeft setImage:[UIImage imageNamed:@"trash@2x"] forState:UIControlStateNormal];
-            [buttonLeft addTarget:self action:@selector(deleteMyVenue:withEvent:) forControlEvents:UIControlEventTouchUpInside];
-
-            pin.leftCalloutAccessoryView = buttonLeft;
-            pin.draggable = YES;
-            
         }
-        return pin;
+        pin.canShowCallout = YES;
+        pin.tintColor = [UIColor colorWithHexString:@"00AB72"];
+        pin.image = [UIImage imageNamed:@"icon"];
+        pin.calloutOffset = CGPointMake(0, 0);
+        UIButton *buttonRight = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [buttonRight addTarget:self action:@selector(openVenue) forControlEvents:UIControlEventTouchUpInside];
+        pin.rightCalloutAccessoryView = buttonRight;
+        
+        UIButton *buttonLeft = [UIButton buttonWithType:UIButtonTypeCustom];
+        [buttonLeft setFrame:CGRectMake(0, 0, 16, 20)];
+        [buttonLeft setImage:[UIImage imageNamed:@"trash@2x"] forState:UIControlStateNormal];
+        [buttonLeft addTarget:self action:@selector(deleteMyVenue:withEvent:) forControlEvents:UIControlEventTouchUpInside];
+        
+        pin.leftCalloutAccessoryView = buttonLeft;
+        pin.draggable = YES;
+        
+        
+        return pin;*/
+        static NSString *annotationViewReuseIdentifier = @"annotationViewReuseIdentifier";
+
+        MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:annotationViewReuseIdentifier];
+        
+        if (annotationView == nil)
+        {
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationViewReuseIdentifier];
+        }
+        
+        // here you can assign your friend's image
+        annotationView.image = [UIImage imageNamed:@"favorite_green"];
+        annotationView.annotation = annotation;
+        
+        // add below line of code to enable selection on annotation view
+        annotationView.canShowCallout = YES;
+        UIButton *buttonRight = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [buttonRight addTarget:self action:@selector(openVenue) forControlEvents:UIControlEventTouchUpInside];
+        annotationView.rightCalloutAccessoryView = buttonRight;
+        
+        UIButton *buttonLeft = [UIButton buttonWithType:UIButtonTypeCustom];
+        [buttonLeft setFrame:CGRectMake(0, 0, 16, 20)];
+        [buttonLeft setImage:[UIImage imageNamed:@"trash@2x"] forState:UIControlStateNormal];
+        [buttonLeft addTarget:self action:@selector(deleteMyVenue:withEvent:) forControlEvents:UIControlEventTouchUpInside];
+        
+        annotationView.leftCalloutAccessoryView = buttonLeft;
+        annotationView.draggable = YES;
+        
+        return annotationView;
         
     }
     //foursquare supply locations
@@ -624,26 +659,26 @@ enum CURRENT_PAGE {
 - (void) deleteMyVenue: (UIControl *) button withEvent: (UIEvent *) event
 {
     //获取当前选中的地点
-    MyVenue *ann = self.mapView.selectedAnnotations.lastObject;
+    MyVenue *selectann = self.mapView.selectedAnnotations.lastObject;
     
     //从数据库中删除
     NSString *dbPath  = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/database.db"];
     
     EGODatabase* database = [EGODatabase databaseWithPath:dbPath];
     
-    NSString* sqlDelete = [[NSString alloc] initWithFormat:@"delete from myplaces where venueid='%@'",ann.venueId];
+    NSString* sqlDelete = [[NSString alloc] initWithFormat:@"delete from myplaces where venueid='%@'",selectann.venueId];
     
     [database executeQuery:sqlDelete];
     
     [database close];
 
     //从地图中清除选中的地点
-    [self.mapView removeAnnotation:self.mapView.selectedAnnotations.lastObject];
+    [self.mapView removeAnnotation:selectann];
     
     //从列表中去掉
     for (int i=0; i<self.nearbyVenues.count; i++) {
         FSVenue* ven = [self.nearbyVenues objectAtIndex:i];
-        if ([ven.venueId isEqualToString:ann.venueId]) {
+        if ([ven.venueId isEqualToString:selectann.venueId]) {
             [self.nearbyVenues removeObject:ven];
             
             if (self.nearbyVenues.count == 0) {
@@ -1019,6 +1054,10 @@ enum CURRENT_PAGE {
     }else if(venue.location.distance){
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@m",
                                      venue.location.distance];
+    }
+    
+    if ([venue isKindOfClass:[MyVenue class]]) {
+        cell.textLabel.textColor = [UIColor colorWithHexString:@"00AB72"];
     }
 
     return cell;

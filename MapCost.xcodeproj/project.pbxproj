@@ -18,8 +18,6 @@
 		A12DB7671DFFA7CE0051892E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A12DB7631DFFA7CE0051892E /* Info.plist */; };
 		A12DB7681DFFA7CE0051892E /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A12DB7641DFFA7CE0051892E /* iRate.bundle */; };
 		A12DB7691DFFA7CE0051892E /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = A12DB7661DFFA7CE0051892E /* iRate.m */; };
-		A12DB76B1E0052BB0051892E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12DB76A1E0052BB0051892E /* AssetsLibrary.framework */; };
-		A12DB76F1E0053C40051892E /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = A12DB76E1E0053C40051892E /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		A12EB5F417C0D06E00CF8232 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EB5EE17C0D06E00CF8232 /* back@2x.png */; };
 		A12EB5F517C0D06E00CF8232 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EB5EF17C0D06E00CF8232 /* camera@2x.png */; };
 		A12EB5F617C0D06E00CF8232 /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EB5F017C0D06E00CF8232 /* cancel@2x.png */; };
@@ -140,8 +138,7 @@
 		A12DB7651DFFA7CE0051892E /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
 		A12DB7661DFFA7CE0051892E /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
 		A12DB76A1E0052BB0051892E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		A12DB76D1E0053C40051892E /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
-		A12DB76E1E0053C40051892E /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
+		A12DB7701E00C9B80051892E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		A12EB5EE17C0D06E00CF8232 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		A12EB5EF17C0D06E00CF8232 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
 		A12EB5F017C0D06E00CF8232 /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
@@ -290,7 +287,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A12DB76B1E0052BB0051892E /* AssetsLibrary.framework in Frameworks */,
 				A15B0A79188FD7140076D6DD /* SystemConfiguration.framework in Frameworks */,
 				A15B0A78188FD6DD0076D6DD /* libc++.dylib in Frameworks */,
 				A15B0A76188FD6D10076D6DD /* libz.dylib in Frameworks */,
@@ -324,15 +320,6 @@
 				A12DB7661DFFA7CE0051892E /* iRate.m */,
 			);
 			path = iRate;
-			sourceTree = "<group>";
-		};
-		A12DB76C1E0053C40051892E /* ALAssetsLibrary-CustomPhotoAlbum */ = {
-			isa = PBXGroup;
-			children = (
-				A12DB76D1E0053C40051892E /* ALAssetsLibrary+CustomPhotoAlbum.h */,
-				A12DB76E1E0053C40051892E /* ALAssetsLibrary+CustomPhotoAlbum.m */,
-			);
-			path = "ALAssetsLibrary-CustomPhotoAlbum";
 			sourceTree = "<group>";
 		};
 		A12EB5EC17C0D06E00CF8232 /* images */ = {
@@ -389,7 +376,6 @@
 		A15B09F7188FD62B0076D6DD /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
-				A12DB76C1E0053C40051892E /* ALAssetsLibrary-CustomPhotoAlbum */,
 				A12DB7621DFFA7CE0051892E /* iRate */,
 				A15B0A3E188FD62B0076D6DD /* SVProgressHUD */,
 				A15B0A4A188FD62B0076D6DD /* UIButton+Custom.h */,
@@ -451,6 +437,7 @@
 		A1FFC3BE17BCB95900A137B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A12DB7701E00C9B80051892E /* Photos.framework */,
 				A12DB76A1E0052BB0051892E /* AssetsLibrary.framework */,
 				A15B0A77188FD6DD0076D6DD /* libc++.dylib */,
 				A15B0A75188FD6D10076D6DD /* libz.dylib */,
@@ -758,7 +745,6 @@
 				A1A6367917C06BCC00893285 /* TableViewCell.m in Sources */,
 				A1A6368117C06C1B00893285 /* RMSwipeTableViewCell.m in Sources */,
 				A1702BBA183475B3006727F6 /* MyVenue.m in Sources */,
-				A12DB76F1E0053C40051892E /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				A12EB60A17C0D2EF00CF8232 /* NSString+MD5Addition.m in Sources */,
 				A12EB60B17C0D2EF00CF8232 /* UIDevice+IdentifierAddition.m in Sources */,
 			);
@@ -857,7 +843,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapCost/MapCost-Prefix.pch";
 				INFOPLIST_FILE = "MapCost/MapCost-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -881,7 +867,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapCost/MapCost-Prefix.pch";
 				INFOPLIST_FILE = "MapCost/MapCost-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
