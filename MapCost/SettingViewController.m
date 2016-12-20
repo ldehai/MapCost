@@ -43,7 +43,7 @@
     [self setTitle:@"About"];
     [self addNavigationButton];
     
-    NSString *strBundleVersion = [NSString stringWithFormat:@"%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+    NSString *strBundleVersion = [NSString stringWithFormat:@"%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
     self.verlabel.text = [NSString stringWithFormat:@"Mapcost v%@",strBundleVersion];
     
     self.appArray = [NSArray arrayWithObjects:

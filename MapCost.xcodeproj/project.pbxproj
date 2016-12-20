@@ -12,9 +12,6 @@
 		A12DB7561DFE598D0051892E /* icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A12DB7541DFE598D0051892E /* icon@3x.png */; };
 		A12DB7591DFF9E970051892E /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = A12DB7571DFF9E970051892E /* map.png */; };
 		A12DB75A1DFF9E970051892E /* map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A12DB7581DFF9E970051892E /* map@2x.png */; };
-		A12DB75E1DFFA60B0051892E /* mapcosticon.png in Resources */ = {isa = PBXBuildFile; fileRef = A12DB75B1DFFA60B0051892E /* mapcosticon.png */; };
-		A12DB75F1DFFA60B0051892E /* mapcosticon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A12DB75C1DFFA60B0051892E /* mapcosticon@2x.png */; };
-		A12DB7601DFFA60B0051892E /* mapcosticon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A12DB75D1DFFA60B0051892E /* mapcosticon@3x.png */; };
 		A12DB7671DFFA7CE0051892E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A12DB7631DFFA7CE0051892E /* Info.plist */; };
 		A12DB7681DFFA7CE0051892E /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A12DB7641DFFA7CE0051892E /* iRate.bundle */; };
 		A12DB7691DFFA7CE0051892E /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = A12DB7661DFFA7CE0051892E /* iRate.m */; };
@@ -71,6 +68,9 @@
 		A1B0786E18385388006DDDC1 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B0786C18385388006DDDC1 /* twitter@2x.png */; };
 		A1B07870183856E3006DDDC1 /* tumblr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B0786F183856E3006DDDC1 /* tumblr@2x.png */; };
 		A1B0787218385F24006DDDC1 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B0787118385F24006DDDC1 /* github.png */; };
+		A1C01BD81E08ABEE00F5CD2F /* mapcosticon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C01BD51E08ABEE00F5CD2F /* mapcosticon.png */; };
+		A1C01BD91E08ABEE00F5CD2F /* mapcosticon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C01BD61E08ABEE00F5CD2F /* mapcosticon@2x.png */; };
+		A1C01BDA1E08ABEE00F5CD2F /* mapcosticon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C01BD71E08ABEE00F5CD2F /* mapcosticon@3x.png */; };
 		A1C744E11837676900F52964 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C744E01837676900F52964 /* Base64.m */; };
 		A1C744E31837AF3000F52964 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C744E21837AF3000F52964 /* ok.png */; };
 		A1C744E51837AFFA00F52964 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C744E41837AFFA00F52964 /* close.png */; };
@@ -130,9 +130,6 @@
 		A12DB7541DFE598D0051892E /* icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@3x.png"; sourceTree = "<group>"; };
 		A12DB7571DFF9E970051892E /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		A12DB7581DFF9E970051892E /* map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map@2x.png"; sourceTree = "<group>"; };
-		A12DB75B1DFFA60B0051892E /* mapcosticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapcosticon.png; sourceTree = "<group>"; };
-		A12DB75C1DFFA60B0051892E /* mapcosticon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapcosticon@2x.png"; sourceTree = "<group>"; };
-		A12DB75D1DFFA60B0051892E /* mapcosticon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapcosticon@3x.png"; sourceTree = "<group>"; };
 		A12DB7631DFFA7CE0051892E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A12DB7641DFFA7CE0051892E /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
 		A12DB7651DFFA7CE0051892E /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
@@ -206,6 +203,9 @@
 		A1B0786C18385388006DDDC1 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
 		A1B0786F183856E3006DDDC1 /* tumblr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tumblr@2x.png"; sourceTree = "<group>"; };
 		A1B0787118385F24006DDDC1 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
+		A1C01BD51E08ABEE00F5CD2F /* mapcosticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapcosticon.png; sourceTree = "<group>"; };
+		A1C01BD61E08ABEE00F5CD2F /* mapcosticon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapcosticon@2x.png"; sourceTree = "<group>"; };
+		A1C01BD71E08ABEE00F5CD2F /* mapcosticon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapcosticon@3x.png"; sourceTree = "<group>"; };
 		A1C744DF1837676900F52964 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		A1C744E01837676900F52964 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		A1C744E21837AF3000F52964 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
@@ -325,9 +325,9 @@
 		A12EB5EC17C0D06E00CF8232 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				A12DB75B1DFFA60B0051892E /* mapcosticon.png */,
-				A12DB75C1DFFA60B0051892E /* mapcosticon@2x.png */,
-				A12DB75D1DFFA60B0051892E /* mapcosticon@3x.png */,
+				A1C01BD51E08ABEE00F5CD2F /* mapcosticon.png */,
+				A1C01BD61E08ABEE00F5CD2F /* mapcosticon@2x.png */,
+				A1C01BD71E08ABEE00F5CD2F /* mapcosticon@3x.png */,
 				A12DB7571DFF9E970051892E /* map.png */,
 				A12DB7581DFF9E970051892E /* map@2x.png */,
 				A12DB7531DFE598D0051892E /* icon@2x.png */,
@@ -651,13 +651,13 @@
 				A1C744EB1837B69C00F52964 /* tripcost.png in Resources */,
 				A1FFC3DC17BCB95900A137B8 /* ViewController.xib in Resources */,
 				A1FFC3FA17BCB9EF00A137B8 /* FSWebLogin.xib in Resources */,
-				A12DB75E1DFFA60B0051892E /* mapcosticon.png in Resources */,
 				A15994621832611000ADEDB7 /* SettingViewController.xib in Resources */,
 				A1FFC3FB17BCB9EF00A137B8 /* pin.png in Resources */,
 				A12DB7671DFFA7CE0051892E /* Info.plist in Resources */,
 				A1FFC3FC17BCB9EF00A137B8 /* pin@2x.png in Resources */,
 				A15B09F2188FD3BD0076D6DD /* Images.xcassets in Resources */,
 				A1C744EA1837B69C00F52964 /* shoebox.png in Resources */,
+				A1C01BDA1E08ABEE00F5CD2F /* mapcosticon@3x.png in Resources */,
 				A1C744ED1837BEC300F52964 /* export@2x.png in Resources */,
 				A1FFC3FD17BCB9EF00A137B8 /* poweredByFoursquare_gray.png in Resources */,
 				A1FFC3FE17BCB9EF00A137B8 /* poweredByFoursquare_gray@2x.png in Resources */,
@@ -667,6 +667,7 @@
 				A1B0786E18385388006DDDC1 /* twitter@2x.png in Resources */,
 				A1FFC42817BD2B0F00A137B8 /* CostStatViewController.xib in Resources */,
 				A187D2AF1835F2E700B72627 /* app@2x.png in Resources */,
+				A1C01BD91E08ABEE00F5CD2F /* mapcosticon@2x.png in Resources */,
 				A1FFC42A17BD2C1D00A137B8 /* chartjs in Resources */,
 				A1FFC43417BDA5BE00A137B8 /* ThisVenuesViewController.xib in Resources */,
 				A1A6367F17C06C1B00893285 /* LICENSE in Resources */,
@@ -684,18 +685,17 @@
 				A1A6369717C0C7E500893285 /* iTunesArtwork@2x in Resources */,
 				A12EB5F417C0D06E00CF8232 /* back@2x.png in Resources */,
 				A12EB5F517C0D06E00CF8232 /* camera@2x.png in Resources */,
-				A12DB7601DFFA60B0051892E /* mapcosticon@3x.png in Resources */,
 				A12EB5F617C0D06E00CF8232 /* cancel@2x.png in Resources */,
 				A12EB5F717C0D06E00CF8232 /* mail@2x.png in Resources */,
 				A12EB5F817C0D06E00CF8232 /* trash@2x.png in Resources */,
 				A12EB61217C0DBC900CF8232 /* plus.png in Resources */,
 				A159945C18325CC700ADEDB7 /* setting.png in Resources */,
 				A1C744E91837B69C00F52964 /* etimer.png in Resources */,
+				A1C01BD81E08ABEE00F5CD2F /* mapcosticon.png in Resources */,
 				A12EB61317C0DBC900CF8232 /* plus@2x.png in Resources */,
 				A1C744E51837AFFA00F52964 /* close.png in Resources */,
 				A187D2AA1835F11400B72627 /* favorite@2x.png in Resources */,
 				A12DB7681DFFA7CE0051892E /* iRate.bundle in Resources */,
-				A12DB75F1DFFA60B0051892E /* mapcosticon@2x.png in Resources */,
 				A159945D18325CC700ADEDB7 /* setting@2x.png in Resources */,
 				A187D2B01835F2E700B72627 /* like@2x.png in Resources */,
 				A12EB61517C116D300CF8232 /* check@2x.png in Resources */,

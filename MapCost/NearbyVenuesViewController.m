@@ -930,22 +930,50 @@ enum CURRENT_PAGE {
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"AppSendExportBill" object:self]; // -> Analytics Event
     
-    MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-    mailViewController.mailComposeDelegate = self;
-    [mailViewController setSubject:@"MapCost Export Bills"];
-    NSString *strMessage = @"<p>MapCost Export Bills</p>";
-   
-    [mailViewController setMessageBody:strMessage isHTML:YES];
-//    mailViewController.navigationBar.tintColor = [UIColor redColor];
+    if ([MFMailComposeViewController canSendMail]==YES)
+    {
+        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+        mailViewController.mailComposeDelegate = self;
+        [mailViewController setSubject:@"MapCost Export Bills"];
+        NSString *strMessage = @"<p>MapCost Export Bills</p>";
+        
+        [mailViewController setMessageBody:strMessage isHTML:YES];
+        //    mailViewController.navigationBar.tintColor = [UIColor redColor];
+        
+        [self generateExportData];
+        NSString *strAttachment = [NSTemporaryDirectory() stringByAppendingPathComponent:@"MapCostBills.csv"];
+        NSData *myData = [NSData dataWithContentsOfFile:strAttachment];
+        NSString *fileName = @"MapCostBills.csv";
+        [mailViewController addAttachmentData:myData mimeType:@"text/csv" fileName:fileName];
+        [self presentViewController:mailViewController animated:YES completion:nil];
+    }
+    else
+    {
+        NSString *deviceType = [UIDevice currentDevice].model;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"")
+                                                        message:[NSString stringWithFormat:NSLocalizedString(@"Your %@ must have an email account set up", @""), deviceType]
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"Ok", @"")
+                                              otherButtonTitles:nil];
+        alert.delegate = self;
+        [alert show];
+    }
+
+}
+
+-(void)launchMailAppOnDevice
+{
+    NSString *recipients = @"mailto:ldehai@gmail.com?subject=mapcost export";
+    NSString *body = @"&body=mapcost export";
     
-    [self generateExportData];
-    NSString *strAttachment = [NSTemporaryDirectory() stringByAppendingPathComponent:@"MapCostBills.csv"];
-    NSData *myData = [NSData dataWithContentsOfFile:strAttachment];
-    NSString *fileName = @"MapCostBills.csv";
-    [mailViewController addAttachmentData:myData mimeType:@"text/csv" fileName:fileName];
+    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
+    email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-//    mailViewController.navigationBar.tintColor = [UIColor colorWithRed:140/255.0 green:192/255.0 blue:160/255.0 alpha:1.0];
-    [self presentViewController:mailViewController animated:YES completion:nil];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex NS_DEPRECATED_IOS(2_0, 9_0){
+    [self launchMailAppOnDevice];
 }
 
 - (void)generateExportData

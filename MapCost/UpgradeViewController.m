@@ -108,7 +108,8 @@
 {
     [SVProgressHUD showSuccessWithStatus:@"Success!"];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+   // [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)goback
