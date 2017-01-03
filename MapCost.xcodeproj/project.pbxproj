@@ -31,6 +31,8 @@
 		A12EB61317C0DBC900CF8232 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EB61117C0DBC900CF8232 /* plus@2x.png */; };
 		A12EB61517C116D300CF8232 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EB61417C116D300CF8232 /* check@2x.png */; };
 		A12EB61717C1C6A300CF8232 /* switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EB61617C1C6A300CF8232 /* switch@2x.png */; };
+		A14AF9281E1BDCFC007BFFFE /* UpgradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14AF92A1E1BDCFC007BFFFE /* UpgradeViewController.xib */; };
+		A14AF92C1E1BDE54007BFFFE /* NearbyVenuesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14AF92E1E1BDE54007BFFFE /* NearbyVenuesViewController.xib */; };
 		A1599459183255B000ADEDB7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1599458183255B000ADEDB7 /* QuartzCore.framework */; };
 		A159945C18325CC700ADEDB7 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = A159945A18325CC700ADEDB7 /* setting.png */; };
 		A159945D18325CC700ADEDB7 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A159945B18325CC700ADEDB7 /* setting@2x.png */; };
@@ -56,7 +58,6 @@
 		A187D2B01835F2E700B72627 /* like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A187D2AE1835F2E700B72627 /* like@2x.png */; };
 		A187D2B21835F6C300B72627 /* upgrade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A187D2B11835F6C300B72627 /* upgrade@2x.png */; };
 		A187D2B6183601B500B72627 /* UpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187D2B4183601B500B72627 /* UpgradeViewController.m */; };
-		A187D2B7183601B500B72627 /* UpgradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187D2B5183601B500B72627 /* UpgradeViewController.xib */; };
 		A187D2BA183604A800B72627 /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = A187D2B9183604A800B72627 /* UIButton+Custom.m */; };
 		A1A6367917C06BCC00893285 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A6367817C06BCC00893285 /* TableViewCell.m */; };
 		A1A6367F17C06C1B00893285 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A1A6367B17C06C1B00893285 /* LICENSE */; };
@@ -103,7 +104,6 @@
 		A1FFC3FE17BCB9EF00A137B8 /* poweredByFoursquare_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1FFC3F317BCB9EF00A137B8 /* poweredByFoursquare_gray@2x.png */; };
 		A1FFC40017BCBA0300A137B8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1FFC3FF17BCBA0300A137B8 /* CoreLocation.framework */; };
 		A1FFC40417BCBA1C00A137B8 /* NearbyVenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FFC40217BCBA1C00A137B8 /* NearbyVenuesViewController.m */; };
-		A1FFC40517BCBA1C00A137B8 /* NearbyVenuesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FFC40317BCBA1C00A137B8 /* NearbyVenuesViewController.xib */; };
 		A1FFC40917BCBA4F00A137B8 /* AddBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FFC40717BCBA4F00A137B8 /* AddBillViewController.m */; };
 		A1FFC40A17BCBA4F00A137B8 /* AddBillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FFC40817BCBA4F00A137B8 /* AddBillViewController.xib */; };
 		A1FFC40D17BCBCCF00A137B8 /* BiLLInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FFC40C17BCBCCF00A137B8 /* BiLLInfo.m */; };
@@ -155,6 +155,10 @@
 		A12EB61117C0DBC900CF8232 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
 		A12EB61417C116D300CF8232 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
 		A12EB61617C1C6A300CF8232 /* switch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch@2x.png"; sourceTree = "<group>"; };
+		A14AF9251E1BCDA7007BFFFE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A14AF9291E1BDCFC007BFFFE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/UpgradeViewController.xib"; sourceTree = "<group>"; };
+		A14AF92B1E1BDCFE007BFFFE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/UpgradeViewController.xib; sourceTree = "<group>"; };
+		A14AF92F1E1BDE58007BFFFE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NearbyVenuesViewController.xib; sourceTree = "<group>"; };
 		A1599458183255B000ADEDB7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A159945A18325CC700ADEDB7 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		A159945B18325CC700ADEDB7 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
@@ -188,7 +192,6 @@
 		A187D2B11835F6C300B72627 /* upgrade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upgrade@2x.png"; sourceTree = "<group>"; };
 		A187D2B3183601B500B72627 /* UpgradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeViewController.h; sourceTree = "<group>"; };
 		A187D2B4183601B500B72627 /* UpgradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpgradeViewController.m; sourceTree = "<group>"; };
-		A187D2B5183601B500B72627 /* UpgradeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpgradeViewController.xib; sourceTree = "<group>"; };
 		A187D2B8183604A800B72627 /* UIButton+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Custom.h"; sourceTree = "<group>"; };
 		A187D2B9183604A800B72627 /* UIButton+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Custom.m"; sourceTree = "<group>"; };
 		A1A6367717C06BCC00893285 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
@@ -252,7 +255,6 @@
 		A1FFC3FF17BCBA0300A137B8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A1FFC40117BCBA1C00A137B8 /* NearbyVenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyVenuesViewController.h; sourceTree = "<group>"; };
 		A1FFC40217BCBA1C00A137B8 /* NearbyVenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyVenuesViewController.m; sourceTree = "<group>"; };
-		A1FFC40317BCBA1C00A137B8 /* NearbyVenuesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearbyVenuesViewController.xib; sourceTree = "<group>"; };
 		A1FFC40617BCBA4F00A137B8 /* AddBillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBillViewController.h; sourceTree = "<group>"; };
 		A1FFC40717BCBA4F00A137B8 /* AddBillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBillViewController.m; sourceTree = "<group>"; };
 		A1FFC40817BCBA4F00A137B8 /* AddBillViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddBillViewController.xib; sourceTree = "<group>"; };
@@ -472,7 +474,7 @@
 				A187D2B9183604A800B72627 /* UIButton+Custom.m */,
 				A187D2B3183601B500B72627 /* UpgradeViewController.h */,
 				A187D2B4183601B500B72627 /* UpgradeViewController.m */,
-				A187D2B5183601B500B72627 /* UpgradeViewController.xib */,
+				A14AF92A1E1BDCFC007BFFFE /* UpgradeViewController.xib */,
 				A1599466183261DF00ADEDB7 /* InAppPurchaseManager.h */,
 				A1599467183261DF00ADEDB7 /* InAppPurchaseManager.m */,
 				A1599463183261AA00ADEDB7 /* AppHelper.h */,
@@ -496,7 +498,7 @@
 				A1FFC40C17BCBCCF00A137B8 /* BiLLInfo.m */,
 				A1FFC40117BCBA1C00A137B8 /* NearbyVenuesViewController.h */,
 				A1FFC40217BCBA1C00A137B8 /* NearbyVenuesViewController.m */,
-				A1FFC40317BCBA1C00A137B8 /* NearbyVenuesViewController.xib */,
+				A14AF92E1E1BDE54007BFFFE /* NearbyVenuesViewController.xib */,
 				A1FFC43017BDA5BD00A137B8 /* ThisVenuesViewController.h */,
 				A1FFC43117BDA5BE00A137B8 /* ThisVenuesViewController.m */,
 				A1FFC43217BDA5BE00A137B8 /* ThisVenuesViewController.xib */,
@@ -625,6 +627,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = A1FFC3B317BCB95900A137B8;
 			productRefGroup = A1FFC3BD17BCB95900A137B8 /* Products */;
@@ -661,7 +664,7 @@
 				A1C744ED1837BEC300F52964 /* export@2x.png in Resources */,
 				A1FFC3FD17BCB9EF00A137B8 /* poweredByFoursquare_gray.png in Resources */,
 				A1FFC3FE17BCB9EF00A137B8 /* poweredByFoursquare_gray@2x.png in Resources */,
-				A1FFC40517BCBA1C00A137B8 /* NearbyVenuesViewController.xib in Resources */,
+				A14AF92C1E1BDE54007BFFFE /* NearbyVenuesViewController.xib in Resources */,
 				A1FFC40A17BCBA4F00A137B8 /* AddBillViewController.xib in Resources */,
 				A1FFC42117BCD26400A137B8 /* README.markdown in Resources */,
 				A1B0786E18385388006DDDC1 /* twitter@2x.png in Resources */,
@@ -677,7 +680,7 @@
 				A187D2AC1835F1E300B72627 /* info@2x.png in Resources */,
 				A12DB75A1DFF9E970051892E /* map@2x.png in Resources */,
 				A1C744E31837AF3000F52964 /* ok.png in Resources */,
-				A187D2B7183601B500B72627 /* UpgradeViewController.xib in Resources */,
+				A14AF9281E1BDCFC007BFFFE /* UpgradeViewController.xib in Resources */,
 				A1B0787218385F24006DDDC1 /* github.png in Resources */,
 				A11562651DEFC79E00315CE3 /* Launch Screen.storyboard in Resources */,
 				A1B0786D18385388006DDDC1 /* facebook@2x.png in Resources */,
@@ -753,10 +756,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		A14AF92A1E1BDCFC007BFFFE /* UpgradeViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A14AF9291E1BDCFC007BFFFE /* zh-Hans */,
+				A14AF92B1E1BDCFE007BFFFE /* en */,
+			);
+			name = UpgradeViewController.xib;
+			sourceTree = "<group>";
+		};
+		A14AF92E1E1BDE54007BFFFE /* NearbyVenuesViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A14AF92F1E1BDE58007BFFFE /* en */,
+			);
+			name = NearbyVenuesViewController.xib;
+			sourceTree = "<group>";
+		};
 		A1FFC3C817BCB95900A137B8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A1FFC3C917BCB95900A137B8 /* en */,
+				A14AF9251E1BCDA7007BFFFE /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -776,6 +797,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -797,7 +819,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -807,6 +829,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -821,7 +844,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
